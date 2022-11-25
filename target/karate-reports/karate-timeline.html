@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/LoginUsuario[1:7]","start":1669326222620,"end":1669326223185,"title":"features\/LoginUsuario[1:7] 16:43:42.620-16:43:43.185 Register users Successful"},{"id":2,"group":1,"content":"features\/LoginUsuario[2:15]","start":1669326223188,"end":1669326223738,"title":"features\/LoginUsuario[2:15] 16:43:43.188-16:43:43.738 Register users Unsuccessful"},{"id":3,"group":1,"content":"features\/ActualizarParcheUsuario[1:7]","start":1669326217460,"end":1669326219395,"title":"features\/ActualizarParcheUsuario[1:7] 16:43:37.460-16:43:39.395 Update patch user"},{"id":4,"group":1,"content":"features\/EliminarUsuario[1:7]","start":1669326221209,"end":1669326221779,"title":"features\/EliminarUsuario[1:7] 16:43:41.209-16:43:41.779 Delete user"},{"id":5,"group":1,"content":"features\/ListaRecursos[1:7]","start":1669326221817,"end":1669326222173,"title":"features\/ListaRecursos[1:7] 16:43:41.817-16:43:42.173 List resources"},{"id":6,"group":1,"content":"features\/CrearUsuario[1:7]","start":1669326220481,"end":1669326221115,"title":"features\/CrearUsuario[1:7] 16:43:40.481-16:43:41.115 Create user"},{"id":7,"group":1,"content":"features\/ActualizarUsuario[1:7]","start":1669326219848,"end":1669326220416,"title":"features\/ActualizarUsuario[1:7] 16:43:39.848-16:43:40.416 Update users"},{"id":8,"group":1,"content":"features\/RegistroUsuario[1:7]","start":1669326223782,"end":1669326224339,"title":"features\/RegistroUsuario[1:7] 16:43:43.782-16:43:44.339 Register users Successful"},{"id":9,"group":1,"content":"features\/RegistroUsuario[2:15]","start":1669326224342,"end":1669326224948,"title":"features\/RegistroUsuario[2:15] 16:43:44.342-16:43:44.948 Register users Unsuccessful"},{"id":10,"group":1,"content":"features\/ListaUsuario[1:7]","start":1669326222210,"end":1669326222591,"title":"features\/ListaUsuario[1:7] 16:43:42.210-16:43:42.591 List users"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
